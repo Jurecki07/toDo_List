@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible"
+    content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body style="text-align:center;">
+
+  <h1>SIGN UP!</h1>
+
+  <form action="/signup"
+    method="post">
+    <label for="nameInput">Name</label>
+    <input id="nameInput"
+      type="text"
+      name="name"
+      required> <br>
+    <label for="ageInput">age</label>
+    <input id="ageInput"
+      type="number"
+      min="14"
+      max="113"
+      name="age"
+      required> <br>
+    <label for="emailInput">Email</label>
+    <input id="emailInput"
+      type="email"
+      minlength="7"
+      maxlength="60"
+      name="email"
+      required> <br>
+    <button type="submit">Submit</button>
+  </form>
+
+</body>
+
+</html>
