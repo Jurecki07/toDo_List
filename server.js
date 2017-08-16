@@ -15,7 +15,7 @@ app.set("view engine", "mustache");
 
 app.use(express.static(path.join(__dirname, "./public")));
 app.use(bodyParser.urlencoded({
-    extended: false
+    extended: true
 
 }));
 
@@ -29,7 +29,7 @@ app.get("/", function (req, res) {
 
 app.post("/newtodo", (req, res) => {
     let newTodo = req.body;
-    newTodo.complete = false;
+    newTodo.complete = true;
     todos.push(newTodo);
     // console.log('todos: ', todos);
     res.redirect("/");

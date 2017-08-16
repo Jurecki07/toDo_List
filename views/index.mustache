@@ -14,26 +14,25 @@
 
     <form action="/newtodo" method="post">
         <label for="nameInput">Todo</label>
-        <input id="nameInput" type="text" name="task" placeholder="Buy milk" required> <br>
-        <button type="submit">Submit</button>
+        <input id="nameInput" type="text" name="task" placeholder="Add a Todo" required> <br>
+        <button type="submit">Add Todo</button>
     </form>
 
     <div class="todos">
 
         {{#todos}} 
-        
+        <li>
             {{#complete}}
-                <p> {{task}} </p>
+            <input type="checkbox">          
+    {{task}}
             {{/complete}}
             {{^complete}}
-                <p>{{task}} </p>
+            {{task}} 
             {{/complete}}
 
-
+</li>
         {{/todos}}
 
-
-        <p> </p>
     </div>
 </body>
 
