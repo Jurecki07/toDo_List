@@ -1,0 +1,19 @@
+{
+  "name": "list",
+  "version": "1.0.0",
+  "description": "Todo List",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "busboy": "^0.2.14",
+    "express": "^4.15.4",
+    "mustache": "^2.3.0",
+    "mustache-express": "^1.2.5",
+    "nodemon": "^1.11.0"
+  }
+}
