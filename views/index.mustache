@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 
 <body style="text-align:center;">
@@ -23,11 +24,17 @@
         {{#todos}} 
         <li>
             {{#complete}}
-            <input type="checkbox">          
-    {{task}}
+            <form action="/complete/{{task}}" method="POST">
+                <button type="submit">Done</button>
+            </form>        
+                    {{task}}
             {{/complete}}
             {{^complete}}
-            {{task}} 
+            <form action="/complete/{{task}}" method="POST">
+             {{task}} 
+                <button type="submit">Done</button>
+            </form>   
+           
             {{/complete}}
 
 </li>

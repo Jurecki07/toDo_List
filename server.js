@@ -29,12 +29,26 @@ app.get("/", function (req, res) {
 
 app.post("/newtodo", (req, res) => {
     let newTodo = req.body;
-    newTodo.complete = true;
+    newTodo.complete = false;
     todos.push(newTodo);
     // console.log('todos: ', todos);
     res.redirect("/");
 });
 
+app.post("/complete/:todo", (req, res)=>{
+    // save the url parameter in a var. 
+    // find the matching todo using the url todo param
+    // mark that todo.complete as true
+    // redirect to "/"
+    res.send(req.params.todo)
+})
+// app.get('/', routes.index);
+// app.get('/tasks', tasks.list);
+// app.post('/tasks', tasks.markAllCompleted)
+// app.post('/tasks', tasks.add);
+// app.post('/tasks/:task_id', tasks.markCompleted);
+// app.delete('/tasks/:task_id', tasks.del);
+// app.get('/tasks/completed', tasks.completed);
 
 
 
