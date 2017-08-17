@@ -27,12 +27,12 @@
             <form action="/complete/{{task}}" method="POST">
                 <button type="submit">Done</button>
             </form>        
-                    {{task}}
+            {{task}} Task has been completed 
             {{/complete}}
             {{^complete}}
             <form action="/complete/{{task}}" method="POST">
-             {{task}} 
-                <button type="submit">Done</button>
+            {{task}} 
+            <button type="submit">Done</button>
             </form>   
            
             {{/complete}}

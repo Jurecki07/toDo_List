@@ -36,19 +36,19 @@ app.post("/newtodo", (req, res) => {
 });
 
 app.post("/complete/:todo", (req, res)=>{
-    // save the url parameter in a var. 
+    let task = req.params.todo; 
+    let foundTodo = todos.find( function(todo){ return todo.task === task; } );
+    console.log('foundTodo: ', foundTodo);
+    foundTodo.complete = !foundTodo.complete;
+    // this is the todo.task of one 
+    // use the array.find() method to find the matghing object
+
     // find the matching todo using the url todo param
     // mark that todo.complete as true
     // redirect to "/"
-    res.send(req.params.todo)
+    res.redirect("/")
 })
-// app.get('/', routes.index);
-// app.get('/tasks', tasks.list);
-// app.post('/tasks', tasks.markAllCompleted)
-// app.post('/tasks', tasks.add);
-// app.post('/tasks/:task_id', tasks.markCompleted);
-// app.delete('/tasks/:task_id', tasks.del);
-// app.get('/tasks/completed', tasks.completed);
+
 
 
 
