@@ -35,19 +35,20 @@ app.post("/newtodo", (req, res) => {
     res.redirect("/");
 });
 
-app.post("/complete/:todo", (req, res)=>{
-    let task = req.params.todo; 
-    let foundTodo = todos.find( function(todo){ return todo.task === task; } );
-    console.log('foundTodo: ', foundTodo);
+app.post("/complete/:todo", (req, res) => {
+    let task = req.params.todo;
+    let foundTodo = todos.find(function (todo) {
+        return todo.task === task;
+    });
     foundTodo.complete = !foundTodo.complete;
-    // this is the todo.task of one 
-    // use the array.find() method to find the matghing object
-
-    // find the matching todo using the url todo param
-    // mark that todo.complete as true
-    // redirect to "/"
     res.redirect("/")
 })
+// 39-50 this is the todo.task of one 
+// use the array.find() method to find the matghing object
+
+// find the matching todo using the url todo param
+// mark that todo.complete as true
+// redirect to "/"
 
 
 

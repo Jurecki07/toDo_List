@@ -1,5 +1,10 @@
-li {
+.todos {
     display: flex;
     justify-content: center;
-    margin: 10px;
+}
+
+.compl{
+display: flex;
+align-content: flex-end;
+
 }
