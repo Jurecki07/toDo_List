@@ -14,11 +14,11 @@
 
 <body style="text-align:center;">
 
-    <h1>TodoList</h1>
+    <h1>Todo List</h1>
 
     <form action="/newtodo" method="post">
         <label for="nameInput">Todo</label>
-        <input id="nameInput" type="text" name="task" placeholder="Add a Todo" required> <br>
+        <input id="nameInput" type="text" name="task" placeholder=" add a task" required> <br>
         <button type="submit">Add Todo</button>
     </form>
 
@@ -28,26 +28,32 @@
         {{#todos}} 
             <b>{{#complete}}</b>
             <form action="/complete/{{task}}" method="POST">
-                <button type="submit">Done</button>
+                <button type="submit">Redo</button>
             </form>  
             </div>   
             <div class = "compl">
+                <br> 
+                <br> 
              {{task}}
-             Task has been completed 
             {{/complete}}
-
             {{^complete}}
             </div>
             <form action="/complete/{{task}}" method="POST">
-            {{task}} 
-        //  <button type="submit">Done</button>
-            </form>   
             
-            {{/complete}}
+                {{task}} 
+                <button type="submit">Undo</button>
+         
+         
+        {{/complete}}
+
+            
 
         {{/todos}}
 </li>
         </div>
+
+                    </form>   
+
 
     
 </body>
