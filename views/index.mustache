@@ -18,41 +18,37 @@
 
     <form action="/newtodo" method="post">
         <label for="nameInput">Todo</label>
-        <input id="nameInput" type="text" name="task" placeholder=" add a task" required> <br>
+        <input id="nameInput" type="text" name="task" placeholder=" add a task" autofocus required> <br>
         <button type="submit">Add Todo</button>
     </form>
 
     <div class="todos">
 
-        <li style = "list-style: none">
         {{#todos}} 
-            <b>{{#complete}}</b>
-            <form action="/complete/{{task}}" method="POST">
-                <button type="submit">Redo</button>
-            </form>  
-            </div>   
-            <div class = "compl">
-                <br> 
-                <br> 
-             {{task}}
-            {{/complete}}
-            {{^complete}}
-            </div>
+            {{#incomplete}}
+            <div>
             <form action="/complete/{{task}}" method="POST">
             
                 {{task}} 
                 <button type="submit">Undo</button>
-         
-         
-        {{/complete}}
-
-            
-
+             </form>   
+            </div>
+                <br> 
+        {{/incomplete}}
+        <hr/>
+        {{#complete}}
+            <div>
+                <form action="/complete/{{task}}" method="POST">
+                    {{task}}<button type="submit">Redo</button>
+                </form>  
+            </div>   
+            <div class = "compl">
+                <br> 
+            {{/complete}}
         {{/todos}}
-</li>
         </div>
+        </form>
 
-                    </form>   
 
 
     

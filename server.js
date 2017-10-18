@@ -16,14 +16,24 @@ app.set("view engine", "mustache");
 app.use(express.static(path.join(__dirname, "./public")));
 app.use(bodyParser.urlencoded({
     extended: true
-
 }));
 
 let todos = [];
 
 app.get("/", function (req, res) {
+    let complete = [];
+    let incomplete = [];
+
+    todos.forEach(todo => {
+        if (todo.complete) {
+            complete.push(todo);
+        } else {
+            incomplete.push(todo);
+        }
+    })
+
     res.render('index', {
-        todos: todos
+        todos: { complete: complete, incomplete: incomplete }
     });
 });
 
