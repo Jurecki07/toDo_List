@@ -13,7 +13,7 @@
     "body-parser": "^1.17.2",
     "bootstrap": "^3.3.7",
     "busboy": "^0.2.14",
-    "express": "^4.15.4",
+    "express": "^4.17.3",
     "mustache": "^2.3.0",
     "mustache-express": "^1.2.5",
     "nodemon": "^1.11.0"
